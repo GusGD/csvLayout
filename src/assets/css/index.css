@@ -100,7 +100,23 @@ body {
 .File,
 .linha,
 .coluna {
-box-shadow: 0px 0px 9px 3px #979393;
-margin-bottom: 23px;
-padding: 22px;
+  box-shadow: 0px 0px 9px 3px #979393;
+  margin-bottom: 23px;
+  padding: 22px;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c07e7e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c07e7e;
 }
