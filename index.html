@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./src/assets/css/index.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <div class="File">
+      <h1>File</h1>
+      <div class="form-group">
+        <label for="file_identificador">Identificador:</label>
+        <input type="text" id="file_identificador" name="file_identificador" value="F" disabled="true">
+      </div>
+      <div class="form-group">
+        <label for="file_name">Nome do arquivo:</label>
+        <input type="text" id="file_name" name="file_name">
+      </div>
+      <div class="form-group">
+        <label for="file_versao">Versão:</label>
+        <input type="text" id="file_versao" name="file_versao">
+      </div>
+      <div class="form-group">
+        <label for="file_line_code_pos">Line code Pos:</label>
+        <input type="text" id="file_line_code_pos" name="file_line_code_pos">
+      </div>
+      <div class="form-group">
+        <label for="file_line_header_code">Line Header Code:</label>
+        <input type="text" id="file_line_header_code" name="file_line_header_code">
+      </div>
+      <div class="form-group">
+        <label for="file_line_trailer_code">Line Trailler code:</label>
+        <input type="text" id="file_line_trailer_code" name="file_line_trailer_code">
+      </div>
+      <div class="form-group">
+        <label for="file_col_separator">Col Separator:</label>
+        <input type="text" id="file_col_separator" name="file_col_separator">
+      </div>
+      <div class="form-group">
+        <label for="file_desc">File Desc:</label>
+        <input type="text" id="file_desc" name="file_desc">
+      </div>
+      <div class="form-group">
+        <label for="file_natural_keys">Natural Keys:</label>
+        <input type="text" id="file_natural_keys" name="file_natural_keys">
+      </div>
+      <div class="form-group">
+        <label for="file_date_mask">Date Mask:</label>
+        <input type="text" id="file_date_mask" name="file_date_mask">
+      </div>
+      <div class="form-group">
+        <label for="file_version_col_name">Versão col name:</label>
+        <input type="text" id="file_version_col_name" name="file_version_col_name">
+      </div>
+      <div class="form-group">
+        <label for="file_table_name_prefix">Nome prefix:</label>
+        <input type="text" id="file_table_name_prefix" name="file_table_name_prefix">
+      </div>
+      <div class="form-group">
+        <label for="file_info">Info:</label>
+        <textarea id="file_info" name="file_info" rows="4"></textarea>
+      </div>
+    </div>
+
+    <div class="linha">
+      <h1>Linha</h1>
+      <div class="form-group">
+        <label for="line_identificador">Linha Identificador:</label>
+        <input type="text" id="line_identificador" name="line_identificador" value="L" disabled="true">
+      </div>
+      <div class="form-group">
+        <label for="line_code">LINE CODE:</label>
+        <input type="text" id="line_code" name="line_code">
+      </div>
+      <div class="form-group">
+        <label for="line_level">Level:</label>
+        <input type="text" id="line_level" name="line_level">
+      </div>
+      <div class="form-group">
+        <label for="line_parente">Line Parente:</label>
+        <input type="text" id="line_parente" name="line_parente">
+      </div>
+      <div class="form-group">
+        <label for="line_table_sulfix">Table sulfix:</label>
+        <input type="text" id="line_table_sulfix" name="line_table_sulfix">
+      </div>
+      <div class="form-group">
+        <label for="line_descr">Descrição:</label>
+        <textarea id="line_descr" name="line_descr" rows="4"></textarea>
+      </div>
+    </div>
+
+    <div class="coluna">
+      <h1>Coluna</h1>
+      <div class="form-group">
+        <label for="col_identificador">Col Identificador:</label>
+        <input type="text" id="col_identificador" name="col_identificador" value="C" disabled="true">
+      </div>
+      <div class="form-group">
+        <label for="col_name">Col name:</label>
+        <input type="text" id="col_name" name="col_name">
+      </div>
+      <div class="form-group">
+        <label for="col_tipo">Tipo:</label>
+        <input type="text" id="col_tipo" name="col_tipo">
+      </div>
+      <div class="form-group">
+        <label for="col_pos">Col Pos:</label>
+        <input type="text" id="col_pos" name="col_pos">
+      </div>
+      <div class="form-group">
+        <label for="col_size">Col Size:</label>
+        <input type="text" id="col_size" name="col_size">
+      </div>
+      <div class="form-group">
+        <label for="col_decimal">Decimal:</label>
+        <input type="text" id="col_decimal" name="col_decimal">
+      </div>
+      <div class="form-group">
+        <label for="col_literal">Col Literal:</label>
+        <input type="text" id="col_literal" name="col_literal">
+      </div>
+      <div class="form-group">
+        <label for="col_check">Col Check:</label>
+        <input type="text" id="col_check" name="col_check">
+      </div>
+      <div class="form-group">
+        <label for="col_descr">Descrição:</label>
+        <textarea id="col_descr" name="col_descr" rows="4"></textarea>
+      </div>
+    </div>
+
+
+    <div class="button-container">
+      <button id="add-button" onclick="addRow()">Adicionar</button>
+      <button id="csv-button" onclick="generateCSV()">Gerar CSV</button>
+    </div>
+    <div class="table-container">
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>FILE IDENTIFICADOR</th>
+            <th>FILE_NAME</th>
+            <th>VERSAO</th>
+            <th>LINE_CODE_POS</th>
+            <th>LINE_HEADER_CODE</th>
+            <th>LINE_TRAILLER_CODE</th>
+            <th>COL_SEPARATOR</th>
+            <th>FILE_DESC</th>
+            <th>NATURAL_KEYS</th>
+            <th>DATE_MASK</th>
+            <th>VERSION_COL_NAME</th>
+            <th>TABLE_NAME_PREFIX</th>
+            <th>INFO</th>
+            <th class="line-info">LINHA IDENTIFICADOR</th>
+            <th class="line-info">LINHA</th>
+            <th class="line-info">NÍVEL</th>
+            <th class="line-info">L_PARENTE</th>
+            <th class="line-info">LINE_TABLE_SULFIX</th>
+            <th class="line-info">LINE_DESCR</th>
+            <th class="column-info">COL_IDENTIFICADOR</th>
+            <th class="column-info">COL_NAME</th>
+            <th class="column-info">COL_TIPO</th>
+            <th class="column-info">COL_POS</th>
+            <th class="column-info">COL_SIZE</th>
+            <th class="column-info">COL_DECIMAL</th>
+            <th class="column-info">COL_LITERAL</th>
+            <th class="column-info">COL_CHECK</th>
+            <th class="column-info">COL_DESCR</th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./src/assets/js/index.js"></script>
+</body>
+
+</html>
