@@ -56,7 +56,7 @@ function addRow() {
           document.getElementById("col_descr").value
         }</td>
       `;
-  /*
+
   document.getElementById("file_name").value = "";
   document.getElementById("file_versao").value = "";
   document.getElementById("file_line_code_pos").value = "";
@@ -81,7 +81,7 @@ function addRow() {
   document.getElementById("col_decimal").value = "";
   document.getElementById("col_literal").value = "";
   document.getElementById("col_check").value = "";
-  document.getElementById("col_descr").value = "";*/
+  document.getElementById("col_descr").value = "";
 }
 
 function generateCSV() {
@@ -151,4 +151,8 @@ function generateCSV() {
   link.setAttribute("download", csvFileName);
   document.body.appendChild(link);
   link.click();
+  let tbody = document.getElementById("data-table-body");
+  while (tbody.firstChild) {
+    tbody.removeChild(tbody.firstChild);
+  }
 }
