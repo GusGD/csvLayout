@@ -1,99 +1,53 @@
+const inputIds = [
+  "file_name",
+  "file_versao",
+  "file_line_code_pos",
+  "file_line_header_code",
+  "file_line_trailer_code",
+  "file_col_separator",
+  "file_desc",
+  "file_natural_keys",
+  "file_date_mask",
+  "file_version_col_name",
+  "file_table_name_prefix",
+  "file_info",
+  "line_code",
+  "line_level",
+  "line_parente",
+  "line_table_sulfix",
+  "line_descr",
+  "col_name",
+  "col_tipo",
+  "col_pos",
+  "col_size",
+  "col_decimal",
+  "col_literal",
+  "col_check",
+  "col_descr",
+];
+
 function addRow() {
-  var table = document.getElementById("data-table");
-  var tbody = document.getElementById("data-table-body");
+  const newRow = document.createElement("tr");
 
-  var newRow = tbody.insertRow();
-  newRow.innerHTML = `
-        <td>${document.getElementById("file_name").value}</td>
-        <td>${document.getElementById("file_versao").value}</td>
-        <td>${document.getElementById("file_line_code_pos").value}</td>
-        <td>${document.getElementById("file_line_header_code").value}</td>
-        <td>${document.getElementById("file_line_trailer_code").value}</td>
-        <td>${document.getElementById("file_col_separator").value}</td>
-        <td>${document.getElementById("file_desc").value}</td>
-        <td>${document.getElementById("file_natural_keys").value}</td>
-        <td>${document.getElementById("file_date_mask").value}</td>
-        <td>${document.getElementById("file_version_col_name").value}</td>
-        <td>${document.getElementById("file_table_name_prefix").value}</td>
-        <td>${document.getElementById("file_info").value}</td>
-        
-     
-        <td class="line-info">${document.getElementById("line_code").value}</td>
-        <td class="line-info">${
-          document.getElementById("line_level").value
-        }</td>
-        <td class="line-info">${
-          document.getElementById("line_parente").value
-        }</td>
-        <td class="line-info">${
-          document.getElementById("line_table_sulfix").value
-        }</td>
-        <td class="line-info">${
-          document.getElementById("line_descr").value
-        }</td>
+  inputIds.forEach(function (inputId) {
+    const cell = document.createElement("td");
+    cell.textContent = document.getElementById(inputId).value;
+    newRow.appendChild(cell);
+    document.getElementById(inputId).value = "";
+  });
 
+  const tbody = document.getElementById("data-table-body");
+  tbody.appendChild(newRow);
 
-        <td class="column-info">${
-          document.getElementById("col_name").value
-        }</td>
-        <td class="column-info">${
-          document.getElementById("col_tipo").value
-        }</td>
-        <td class="column-info">${document.getElementById("col_pos").value}</td>
-        <td class="column-info">${
-          document.getElementById("col_size").value
-        }</td>
-        <td class="column-info">${
-          document.getElementById("col_decimal").value
-        }</td>
-        <td class="column-info">${
-          document.getElementById("col_literal").value
-        }</td>
-        <td class="column-info">${
-          document.getElementById("col_check").value
-        }</td>
-        <td class="column-info">${
-          document.getElementById("col_descr").value
-        }</td>
-      `;
-
-  document.getElementById("file_name").value = "";
-  document.getElementById("file_versao").value = "";
-  document.getElementById("file_line_code_pos").value = "";
-  document.getElementById("file_line_header_code").value = "";
-  document.getElementById("file_line_trailer_code").value = "";
-  document.getElementById("file_col_separator").value = "";
-  document.getElementById("file_desc").value = "";
-  document.getElementById("file_natural_keys").value = "";
-  document.getElementById("file_date_mask").value = "";
-  document.getElementById("file_version_col_name").value = "";
-  document.getElementById("file_table_name_prefix").value = "";
-  document.getElementById("file_info").value = "";
-  document.getElementById("line_code").value = "";
-  document.getElementById("line_level").value = "";
-  document.getElementById("line_parente").value = "";
-  document.getElementById("line_table_sulfix").value = "";
-  document.getElementById("line_descr").value = "";
-  document.getElementById("col_name").value = "";
-  document.getElementById("col_tipo").value = "";
-  document.getElementById("col_pos").value = "";
-  document.getElementById("col_size").value = "";
-  document.getElementById("col_decimal").value = "";
-  document.getElementById("col_literal").value = "";
-  document.getElementById("col_check").value = "";
-  document.getElementById("col_descr").value = "";
+  inputIds.forEach(function (inputId) {
+    document.getElementById(inputId).value = "";
+  });
 }
 
 function generateCSV() {
   let csvContent = "data:text/csv;charset=utf-8,";
   let rows = document.querySelectorAll("#data-table-body tr");
-
   let csvRows = [];
-
-  let fileTypeRow = [];
-  let lineTypeRow = [];
-  let colTypeRow = [];
-
   let fileTypeData = [];
   let lineTypeData = [];
   let colTypeData = [];
@@ -128,21 +82,11 @@ function generateCSV() {
     }
   });
 
-  console.table(csvContent);
+  csvRows.push(fileTypeData.join("\r\n"));
+  csvRows.push(lineTypeData.join("\r\n"));
+  csvRows.push(colTypeData.join("\r\n"));
 
-  fileTypeRow.push(fileTypeData.join("\r\n"));
-  lineTypeRow.push(lineTypeData.join("\r\n"));
-
-  colTypeRow.push(colTypeData.join("\r\n"));
-
-  csvRows.push(fileTypeRow.join(";"));
-  console.log(csvRows);
-  csvRows.push(lineTypeRow.join(";"));
-  console.log(csvRows);
-  csvRows.push(colTypeRow.join(";"));
-  console.log(csvRows);
-
-  csvContent += csvRows.join("\r\n");
+  csvContent += csvRows.join("\r\n\r\n");
 
   let encodedUri = encodeURI(csvContent);
   let link = document.createElement("a");
@@ -153,7 +97,5 @@ function generateCSV() {
   document.body.appendChild(link);
   link.click();
   let tbody = document.getElementById("data-table-body");
-  while (tbody.firstChild) {
-    tbody.removeChild(tbody.firstChild);
-  }
+  tbody.innerHTML = "";
 }
