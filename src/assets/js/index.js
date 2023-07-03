@@ -110,7 +110,7 @@ function generateCSV() {
     if (lineType) {
       if (lineType.parentElement.parentElement.nodeName === "TBODY") {
         if (lineType.parentElement.parentElement.id === "data-table-body") {
-          lineTypeData.push(rowData);
+          lineTypeData.push(rowData + "\n");
         }
       }
     } else {
@@ -119,11 +119,11 @@ function generateCSV() {
       if (colType) {
         if (colType.parentElement.parentElement.nodeName === "TBODY") {
           if (colType.parentElement.parentElement.id === "data-table-body") {
-            colTypeData.push(rowData);
+            colTypeData.push(rowData + "\n");
           }
         }
       } else {
-        fileTypeData.push(rowData);
+        fileTypeData.push(rowData + "\n");
       }
     }
   });
@@ -132,6 +132,7 @@ function generateCSV() {
 
   fileTypeRow.push(fileTypeData.join("\r\n"));
   lineTypeRow.push(lineTypeData.join("\r\n"));
+
   colTypeRow.push(colTypeData.join("\r\n"));
 
   csvRows.push(fileTypeRow.join(";"));
