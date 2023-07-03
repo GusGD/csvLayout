@@ -10,12 +10,12 @@
   <div class="form-container">
     <div class="File">
       <h1>File</h1>
-      <div class="form-group">
+      <div class="form-group identify">
         <label for="file_identificador">Identificador:</label>
         <input type="text" id="file_identificador" name="file_identificador" value="F" disabled="true">
       </div>
       <div class="form-group">
-        <label for="file_name">Nome do arquivo:</label>
+        <label for="file_name">Nome do Arquivo:</label>
         <input type="text" id="file_name" name="file_name">
       </div>
       <div class="form-group">
@@ -23,23 +23,23 @@
         <input type="text" id="file_versao" name="file_versao">
       </div>
       <div class="form-group">
-        <label for="file_line_code_pos">Line code Pos:</label>
+        <label for="file_line_code_pos">Código de posição da Linha:</label>
         <input type="text" id="file_line_code_pos" name="file_line_code_pos">
       </div>
       <div class="form-group">
-        <label for="file_line_header_code">Line Header Code:</label>
+        <label for="file_line_header_code">Código de cabeçalho da Linha:</label>
         <input type="text" id="file_line_header_code" name="file_line_header_code">
       </div>
       <div class="form-group">
-        <label for="file_line_trailer_code">Line Trailler code:</label>
+        <label for="file_line_trailer_code">Código Trailler:</label>
         <input type="text" id="file_line_trailer_code" name="file_line_trailer_code">
       </div>
       <div class="form-group">
-        <label for="file_col_separator">Col Separator:</label>
+        <label for="file_col_separator">Separador de Coluna:</label>
         <input type="text" id="file_col_separator" name="file_col_separator">
       </div>
       <div class="form-group">
-        <label for="file_desc">File Desc:</label>
+        <label for="file_desc">Descrição do Arquivo:</label>
         <input type="text" id="file_desc" name="file_desc">
       </div>
       <div class="form-group">
@@ -47,87 +47,98 @@
         <input type="text" id="file_natural_keys" name="file_natural_keys">
       </div>
       <div class="form-group">
-        <label for="file_date_mask">Date Mask:</label>
-        <input type="text" id="file_date_mask" name="file_date_mask">
+        <label for="file_date_mask">Máscara de Data:</label>
+        <select id="file_date_mask" name="file_date_mask">
+          <option value="ddMMyyyy">30/12/2023</option>
+          <option value="yyyyMMdd">2023/12/30</option>
+          <option value="MMddyyyy">12/30/2023</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="file_version_col_name">Versão col name:</label>
+        <label for="file_version_col_name">Nome da Versão da Coluna:</label>
         <input type="text" id="file_version_col_name" name="file_version_col_name">
       </div>
       <div class="form-group">
-        <label for="file_table_name_prefix">Nome prefix:</label>
+        <label for="file_table_name_prefix">Prefixo do nome da Tabela:</label>
         <input type="text" id="file_table_name_prefix" name="file_table_name_prefix">
       </div>
       <div class="form-group">
-        <label for="file_info">Info:</label>
+        <label for="file_info">Informação:</label>
         <textarea id="file_info" name="file_info" rows="4"></textarea>
       </div>
     </div>
 
     <div class="linha">
       <h1>Linha</h1>
-      <div class="form-group">
+      <div class="form-group identify">
         <label for="line_identificador">Linha Identificador:</label>
         <input type="text" id="line_identificador" name="line_identificador" value="L" disabled="true">
       </div>
       <div class="form-group">
-        <label for="line_code">LINE CODE:</label>
+        <label for="line_code">Código da Linha:</label>
         <input type="text" id="line_code" name="line_code">
       </div>
       <div class="form-group">
-        <label for="line_level">Level:</label>
+        <label for="line_level">Nível da Linha:</label>
         <input type="text" id="line_level" name="line_level">
       </div>
       <div class="form-group">
-        <label for="line_parente">Line Parente:</label>
+        <label for="line_parente">Parente da Linha:</label>
         <input type="text" id="line_parente" name="line_parente">
       </div>
       <div class="form-group">
-        <label for="line_table_sulfix">Table sulfix:</label>
+        <label for="line_table_sulfix">Sulfixo da linha da Tabela:</label>
         <input type="text" id="line_table_sulfix" name="line_table_sulfix">
       </div>
       <div class="form-group">
-        <label for="line_descr">Descrição:</label>
+        <label for="line_descr">Descrição da Linha:</label>
         <textarea id="line_descr" name="line_descr" rows="4"></textarea>
       </div>
     </div>
 
     <div class="coluna">
       <h1>Coluna</h1>
-      <div class="form-group">
+      <div class="form-group identify">
         <label for="col_identificador">Col Identificador:</label>
         <input type="text" id="col_identificador" name="col_identificador" value="C" disabled="true">
       </div>
       <div class="form-group">
-        <label for="col_name">Col name:</label>
+        <label for="col_name">Nome da Coluna:</label>
         <input type="text" id="col_name" name="col_name">
       </div>
       <div class="form-group">
-        <label for="col_tipo">Tipo:</label>
-        <input type="text" id="col_tipo" name="col_tipo">
+        <label for="col_tipo">Tipo da Coluna:</label>
+        <select id="col_tipo" name="col_tipo">
+          <option value="A">Alfanumérico</option>
+          <option value="D">Data</option>
+          <option value="H">Hora</option>
+          <option value="T">Data e Hora</option>
+          <option value="N">Numérico</option>
+          <option value="n">Código Numérico</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="col_pos">Col Pos:</label>
+        <label for="col_pos">Posição da Coluna:</label>
         <input type="text" id="col_pos" name="col_pos">
       </div>
       <div class="form-group">
-        <label for="col_size">Col Size:</label>
+        <label for="col_size">Tamanho da Coluna:</label>
         <input type="text" id="col_size" name="col_size">
       </div>
       <div class="form-group">
-        <label for="col_decimal">Decimal:</label>
+        <label for="col_decimal">Decimal da Coluna:</label>
         <input type="text" id="col_decimal" name="col_decimal">
       </div>
       <div class="form-group">
-        <label for="col_literal">Col Literal:</label>
+        <label for="col_literal">Coluna Literal:</label>
         <input type="text" id="col_literal" name="col_literal">
       </div>
       <div class="form-group">
-        <label for="col_check">Col Check:</label>
+        <label for="col_check">Coluna Check:</label>
         <input type="text" id="col_check" name="col_check">
       </div>
       <div class="form-group">
-        <label for="col_descr">Descrição:</label>
+        <label for="col_descr">Coluna Descrição:</label>
         <textarea id="col_descr" name="col_descr" rows="4"></textarea>
       </div>
     </div>
@@ -141,34 +152,31 @@
       <table id="data-table">
         <thead>
           <tr>
-            <th>FILE IDENTIFICADOR</th>
-            <th>FILE_NAME</th>
-            <th>VERSAO</th>
-            <th>LINE_CODE_POS</th>
-            <th>LINE_HEADER_CODE</th>
-            <th>LINE_TRAILLER_CODE</th>
-            <th>COL_SEPARATOR</th>
-            <th>FILE_DESC</th>
-            <th>NATURAL_KEYS</th>
-            <th>DATE_MASK</th>
-            <th>VERSION_COL_NAME</th>
-            <th>TABLE_NAME_PREFIX</th>
-            <th>INFO</th>
-            <th class="line-info">LINHA IDENTIFICADOR</th>
-            <th class="line-info">LINHA</th>
-            <th class="line-info">NÍVEL</th>
-            <th class="line-info">L_PARENTE</th>
-            <th class="line-info">LINE_TABLE_SULFIX</th>
-            <th class="line-info">LINE_DESCR</th>
-            <th class="column-info">COL_IDENTIFICADOR</th>
-            <th class="column-info">COL_NAME</th>
-            <th class="column-info">COL_TIPO</th>
-            <th class="column-info">COL_POS</th>
-            <th class="column-info">COL_SIZE</th>
-            <th class="column-info">COL_DECIMAL</th>
-            <th class="column-info">COL_LITERAL</th>
-            <th class="column-info">COL_CHECK</th>
-            <th class="column-info">COL_DESCR</th>
+            <th>Nome do Arquivo</th>
+            <th>Versão</th>
+            <th>Código de posição da linha</th>
+            <th>Código de cabeçalho da linha</th>
+            <th>Código Trailler</th>
+            <th>Separador de Coluna</th>
+            <th>Descrição do Arquivo</th>
+            <th>Natural Keys</th>
+            <th>Máscara de Data</th>
+            <th>Nome da Versão da Coluna</th>
+            <th>Prefixo do nome da Tabela</th>
+            <th>Informação</th>
+            <th class="line-info">Código da Linha</th>
+            <th class="line-info">Nível da Linha</th>
+            <th class="line-info">Parente da Linha</th>
+            <th class="line-info">Sulfixo da linha da Tabela</th>
+            <th class="line-info">Descrição da Linha</th>
+            <th class="column-info">Nome da Coluna</th>
+            <th class="column-info">Tipo da Coluna</th>
+            <th class="column-info">Posição da Coluna</th>
+            <th class="column-info">Tamanho da Coluna</th>
+            <th class="column-info">Decimal da Coluna</th>
+            <th class="column-info">Coluna Literal</th>
+            <th class="column-info">Coluna Check</th>
+            <th class="column-info">Coluna Descrição</th>
           </tr>
         </thead>
         <tbody id="data-table-body">
