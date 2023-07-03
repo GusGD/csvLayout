@@ -4,7 +4,6 @@ function addRow() {
 
   var newRow = tbody.insertRow();
   newRow.innerHTML = `
-        <td>${document.getElementById("file_identificador").value}</td>
         <td>${document.getElementById("file_name").value}</td>
         <td>${document.getElementById("file_versao").value}</td>
         <td>${document.getElementById("file_line_code_pos").value}</td>
@@ -18,9 +17,7 @@ function addRow() {
         <td>${document.getElementById("file_table_name_prefix").value}</td>
         <td>${document.getElementById("file_info").value}</td>
         
-        <td class="line-info">${
-          document.getElementById("line_identificador").value
-        }</td>
+     
         <td class="line-info">${document.getElementById("line_code").value}</td>
         <td class="line-info">${
           document.getElementById("line_level").value
@@ -35,9 +32,7 @@ function addRow() {
           document.getElementById("line_descr").value
         }</td>
 
-        <td class="column-info">${
-          document.getElementById("col_identificador").value
-        }</td>
+
         <td class="column-info">${
           document.getElementById("col_name").value
         }</td>
