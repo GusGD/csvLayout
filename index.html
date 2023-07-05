@@ -2,191 +2,196 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerador de Layout</title>
   <link rel="stylesheet" href="./src/assets/css/index.css">
 </head>
 
 <body>
-  <div class="form-container">
-    <div class="File">
-      <h1>File</h1>
-      <div class="form-group identify">
-        <label for="file_identificador">Identificador:</label>
-        <input type="text" id="file_identificador" name="file_identificador" value="F" disabled="true">
-      </div>
-      <div class="form-group">
-        <label for="file_name">Nome do Arquivo:</label>
-        <input type="text" id="file_name" name="file_name">
-      </div>
-      <div class="form-group">
-        <label for="file_versao">Versão:</label>
-        <input type="text" id="file_versao" name="file_versao">
-      </div>
-      <div class="form-group">
-        <label for="file_line_code_pos">Código de posição da Linha:</label>
-        <input type="text" id="file_line_code_pos" name="file_line_code_pos">
-      </div>
-      <div class="form-group">
-        <label for="file_line_header_code">Código de cabeçalho da Linha:</label>
-        <input type="text" id="file_line_header_code" name="file_line_header_code">
-      </div>
-      <div class="form-group">
-        <label for="file_line_trailer_code">Código Trailler:</label>
-        <input type="text" id="file_line_trailer_code" name="file_line_trailer_code">
-      </div>
-      <div class="form-group">
-        <label for="file_col_separator">Separador de Coluna:</label>
-        <input type="text" id="file_col_separator" name="file_col_separator">
-      </div>
-      <div class="form-group">
-        <label for="file_desc">Descrição do Arquivo:</label>
-        <input type="text" id="file_desc" name="file_desc">
-      </div>
-      <div class="form-group">
-        <label for="file_natural_keys">Natural Keys:</label>
-        <input type="text" id="file_natural_keys" name="file_natural_keys">
-      </div>
-      <div class="form-group">
-        <label for="file_date_mask">Máscara de Data:</label>
-        <select id="file_date_mask" name="file_date_mask">
-          <option class="option" value="ddMMyyyy">30/12/2023</option>
-          <option class="option" value="yyyyMMdd">2023/12/30</option>
-          <option class="option" value="MMddyyyy">12/30/2023</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="file_version_col_name">Nome da Versão da Coluna:</label>
-        <input type="text" id="file_version_col_name" name="file_version_col_name">
-      </div>
-      <div class="form-group">
-        <label for="file_table_name_prefix">Prefixo do nome da Tabela:</label>
-        <input type="text" id="file_table_name_prefix" name="file_table_name_prefix">
-      </div>
-      <div class="form-group">
-        <label for="file_info">Informação:</label>
-        <textarea id="file_info" name="file_info" rows="4"></textarea>
-      </div>
+  <h1>Arquivo</h1>
+  <form id="fileForm">
+    <div class="form-group">
+      <label for="file_name">Nome do Arquivo:</label>
+      <input type="text" id="file_name" name="file_name">
     </div>
-
-    <div class="linha">
-      <h1>Linha</h1>
-      <div class="form-group identify">
-        <label for="line_identificador">Linha Identificador:</label>
-        <input type="text" id="line_identificador" name="line_identificador" value="L" disabled="true">
-      </div>
-      <div class="form-group">
-        <label for="line_code">Código da Linha:</label>
-        <input type="text" id="line_code" name="line_code">
-      </div>
-      <div class="form-group">
-        <label for="line_level">Nível da Linha:</label>
-        <input type="text" id="line_level" name="line_level">
-      </div>
-      <div class="form-group">
-        <label for="line_parente">Parente da Linha:</label>
-        <input type="text" id="line_parente" name="line_parente">
-      </div>
-      <div class="form-group">
-        <label for="line_table_sulfix">Sulfixo da linha da Tabela:</label>
-        <input type="text" id="line_table_sulfix" name="line_table_sulfix">
-      </div>
-      <div class="form-group">
-        <label for="line_descr">Descrição da Linha:</label>
-        <textarea id="line_descr" name="line_descr" rows="4"></textarea>
-      </div>
+    <div class="form-group">
+      <label for="file_versao">Versão:</label>
+      <input type="text" id="file_versao" name="file_versao">
     </div>
-
-    <div class="coluna">
-      <h1>Coluna</h1>
-      <div class="form-group identify">
-        <label for="col_identificador">Col Identificador:</label>
-        <input type="text" id="col_identificador" name="col_identificador" value="C" disabled="true">
-      </div>
-      <div class="form-group">
-        <label for="col_name">Nome da Coluna:</label>
-        <input type="text" id="col_name" name="col_name">
-      </div>
-      <div class="form-group">
-        <label for="col_tipo">Tipo da Coluna:</label>
-        <select id="col_tipo" name="col_tipo">
-          <option class="option" value="A">Alfanumérico</option>
-          <option class="option" value="D">Data</option>
-          <option class="option" value="H">Hora</option>
-          <option class="option" value="T">Data e Hora</option>
-          <option class="option" value="N">Numérico</option>
-          <option class="option" value="n">Código Numérico</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="col_pos">Posição da Coluna:</label>
-        <input type="text" id="col_pos" name="col_pos">
-      </div>
-      <div class="form-group">
-        <label for="col_size">Tamanho da Coluna:</label>
-        <input type="text" id="col_size" name="col_size">
-      </div>
-      <div class="form-group">
-        <label for="col_decimal">Decimal da Coluna:</label>
-        <input type="text" id="col_decimal" name="col_decimal">
-      </div>
-      <div class="form-group">
-        <label for="col_literal">Coluna Literal:</label>
-        <input type="text" id="col_literal" name="col_literal">
-      </div>
-      <div class="form-group">
-        <label for="col_check">Coluna Check:</label>
-        <input type="text" id="col_check" name="col_check">
-      </div>
-      <div class="form-group">
-        <label for="col_descr">Coluna Descrição:</label>
-        <textarea id="col_descr" name="col_descr" rows="4"></textarea>
-      </div>
+    <div class="form-group">
+      <label for="file_line_code_pos">Código de posição da Linha:</label>
+      <input type="text" id="file_line_code_pos" name="file_line_code_pos">
     </div>
-
-
+    <div class="form-group">
+      <label for="file_line_header_code">Código de cabeçalho da Linha:</label>
+      <input type="text" id="file_line_header_code" name="file_line_header_code">
+    </div>
+    <div class="form-group">
+      <label for="file_line_trailer_code">Código Trailler:</label>
+      <input type="text" id="file_line_trailer_code" name="file_line_trailer_code">
+    </div>
+    <div class="form-group">
+      <label for="file_col_separator">Separador de Coluna:</label>
+      <input type="text" id="file_col_separator" name="file_col_separator">
+    </div>
+    <div class="form-group">
+      <label for="file_desc">Descrição do Arquivo:</label>
+      <input type="text" id="file_desc" name="file_desc">
+    </div>
+    <div class="form-group">
+      <label for="file_natural_keys">Chave Natural:</label>
+      <input type="text" id="file_natural_keys" name="file_natural_keys">
+    </div>
+    <div class="form-group">
+      <label for="file_date_mask">Máscara de Data:</label>
+      <select id="file_date_mask" name="file_date_mask">
+        <option class="option" value="ddMMyyyy">30/12/2023</option>
+        <option class="option" value="yyyyMMdd">2023/12/30</option>
+        <option class="option" value="MMddyyyy">12/30/2023</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="file_version_col_name">Nome da Versão da Coluna:</label>
+      <input type="text" id="file_version_col_name" name="file_version_col_name">
+    </div>
+    <div class="form-group">
+      <label for="file_table_name_prefix">Prefixo do nome da Tabela:</label>
+      <input type="text" id="file_table_name_prefix" name="file_table_name_prefix">
+    </div>
+    <div class="form-group">
+      <label for="file_info">Descrição do Arquivo:</label>
+      <textarea id="file_info" name="file_info" rows="4"></textarea>
+    </div>
     <div class="button-container">
-      <button id="add-button" onclick="addRow()">Adicionar</button>
-      <button id="csv-button" onclick="generateCSV()">Gerar CSV</button>
+      <button type="button" onclick="addToFileTable()">Adicionar ao File</button>
     </div>
-    <div class="table-container">
-      <table id="data-table">
-        <thead>
-          <tr>
-            <th>Nome do Arquivo</th>
-            <th>Versão</th>
-            <th>Código de posição da linha</th>
-            <th>Código de cabeçalho da linha</th>
-            <th>Código Trailler</th>
-            <th>Separador de Coluna</th>
-            <th>Descrição do Arquivo</th>
-            <th>Natural Keys</th>
-            <th>Máscara de Data</th>
-            <th>Nome da Versão da Coluna</th>
-            <th>Prefixo do nome da Tabela</th>
-            <th>Informação</th>
-            <th class="line-info">Código da Linha</th>
-            <th class="line-info">Nível da Linha</th>
-            <th class="line-info">Parente da Linha</th>
-            <th class="line-info">Sulfixo da linha da Tabela</th>
-            <th class="line-info">Descrição da Linha</th>
-            <th class="column-info">Nome da Coluna</th>
-            <th class="column-info">Tipo da Coluna</th>
-            <th class="column-info">Posição da Coluna</th>
-            <th class="column-info">Tamanho da Coluna</th>
-            <th class="column-info">Decimal da Coluna</th>
-            <th class="column-info">Coluna Literal</th>
-            <th class="column-info">Coluna Check</th>
-            <th class="column-info">Coluna Descrição</th>
-          </tr>
-        </thead>
-        <tbody id="data-table-body">
-        </tbody>
-      </table>
-    </div>
-  </div>
+  </form>
 
-  <script src="./src/assets/js/index.js"></script>
+  <h1>LINHA</h1>
+  <form id="linhaForm">
+    <div class="form-group">
+      <label for="linha_codigo">Código da Linha:</label>
+      <input type="text" id="linha_codigo" name="linha_codigo">
+    </div>
+    <div class="form-group">
+      <label for="linha_nivel">Nível da Linha:</label>
+      <input type="text" id="linha_nivel" name="linha_nivel">
+    </div>
+    <div class="form-group">
+      <label for="linha_parente">Parente da Linha:</label>
+      <input type="text" id="linha_parente" name="linha_parente">
+    </div>
+    <div class="form-group">
+      <label for="linha_sulfixo">Sulfixo da linha da Tabela:</label>
+      <input type="text" id="linha_sulfixo" name="linha_sulfixo">
+    </div>
+    <div class="form-group">
+      <label for="linha_descricao">Descrição da Linha:</label>
+      <textarea id="linha_descricao" rows="4" name="linha_descricao"></textarea>
+    </div>
+    <div class="button-container">
+      <button type="button" onclick="addToLinhaTable()">Adicionar à Linha</button>
+    </div>
+  </form>
+
+  <h1>COLUNA</h1>
+  <form id="colunaForm">
+    <div class="form-group">
+      <label for="coluna_linha">Código da Linha:</label>
+      <input type="text" id="coluna_linha" name="coluna_linha">
+    </div>
+    <div class="form-group">
+      <label for="coluna_nome">Nome da Coluna:</label>
+      <input type="text" id="coluna_nome" name="coluna_nome">
+    </div>
+    <div class="form-group">
+      <label for="coluna_tipo">Tipo da Coluna:</label>
+      <select id="coluna_tipo" name="coluna_tipo">
+        <option value="A">Alfanumérico</option>
+        <option value="D">Data</option>
+        <option value="H">Hora</option>
+        <option value="T">Data e Hora</option>
+        <option value="N">Numérico</option>
+        <option value="n">Código Numérico</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="coluna_posicao">Posição da Coluna:</label>
+      <input type="text" id="coluna_posicao" name="coluna_posicao">
+    </div>
+    <div class="form-group">
+      <label for="coluna_tamanho">Tamanho da Coluna:</label>
+      <input type="text" id="coluna_tamanho" name="coluna_tamanho">
+    </div>
+    <div class="form-group">
+      <label for="coluna_decimal">Decimal da Coluna:</label>
+      <input type="text" id="coluna_decimal" name="coluna_decimal">
+    </div>
+    <div class="form-group">
+      <label for="coluna_literal">Coluna Literal:</label>
+      <input type="text" id="coluna_literal" name="coluna_literal">
+    </div>
+    <div class="form-group">
+      <label for="coluna_check">Coluna Check:</label>
+      <input type="text" id="coluna_check" name="coluna_check">
+    </div>
+    <div class="form-group">
+      <label for="coluna_desc">Coluna Descrição:</label>
+      <textarea id="coluna_desc" rows="4" name="coluna_desc"></textarea>
+    </div>
+    <div class="button-container">
+      <button type="button" onclick="addToColunaTable()">Adicionar à Coluna</button>
+    </div>
+  </form>
+  <div class="table-container">
+    <h2>Tabela do Arquivo</h2>
+    <table id="fileTable">
+      <tr>
+        <th>Nome do Arquivo</th>
+        <th>Versão</th>
+        <th>Código de posição da Linha</th>
+        <th>Código de cabeçalho da Linha</th>
+        <th>Código Trailler</th>
+        <th>Separador de Coluna</th>
+        <th>Descrição do Arquivo</th>
+        <th>Natural Keys</th>
+        <th>Máscara de Data</th>
+        <th>Nome da Versão da Coluna</th>
+        <th>Prefixo do nome da Tabela</th>
+        <th>Informação</th>
+      </tr>
+    </table>
+  </div>
+  <div class="table-container">
+    <h2>Tabela da Linha</h2>
+    <table id="linhaTable">
+      <tr>
+        <th>Código da Linha</th>
+        <th>Nível da Linha</th>
+        <th>Parente da Linha</th>
+        <th>Sulfixo da linha da Tabela</th>
+        <th>Descrição da Linha</th>
+      </tr>
+    </table>
+  </div>
+  <div class="table-container">
+    <h2>Tabela da Coluna</h2>
+    <table id="colunaTable">
+      <tr>
+        <th>Código da Linha</th>
+        <th>Nome da Coluna</th>
+        <th>Tipo da Coluna</th>
+        <th>Posição da Coluna</th>
+        <th>Tamanho da Coluna</th>
+        <th>Decimal da Coluna</th>
+        <th>Coluna Literal</th>
+        <th>Coluna Check</th>
+        <th>Coluna Descrição</th>
+      </tr>
+    </table>
+  </div>
+  <div class="button-container">
+    <button type="button" onclick="generateCSV()">Gerar CSV</button>
+  </div>
   <script src="./src/assets/js/addGrid.js"></script>
 </body>
-
 </html>
